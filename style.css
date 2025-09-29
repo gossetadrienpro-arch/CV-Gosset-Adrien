@@ -1,0 +1,292 @@
+/* ======== RESET DE BASE ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #6a11cb, #2575fc, #04ebc4);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* ======== HEADER ======== */
+header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    text-align: center;
+    color: white;
+    padding: 40px 0;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    border-radius: 0 0 25px 25px;
+    animation: fadeInDown 1.2s ease forwards;
+}
+header h1 {
+    font-size: 2.8em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* ======== MAIN ======== */
+main {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ======== CARDS ======== */
+.articlegauche, .articledroit {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+    animation: fadeInUp 1.2s ease forwards;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.articlegauche:hover, .articledroit:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 32px rgba(0,0,0,0.4), 0 0 20px rgba(106,17,203,0.5);
+}
+.articlegauche { flex: 1; animation-delay: 0.2s; }
+.articledroit { width: 30%; animation-delay: 0.4s; }
+
+/* ======== TITRES ======== */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc, #04ebc4);
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+h2:hover::after {
+    transform: scaleX(1);
+}
+
+/* ======== PARCOURS PROFESSIONNEL ======== */
+.parcours-professionnel article {
+    background: rgba(255,255,255,0.2);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.parcours-professionnel article:hover {
+    transform: translateY(-6px) rotate(-1deg);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+.parcours-professionnel h3 {
+    color: #00ffe7;
+    margin-bottom: 8px;
+    font-size: 1.1em;
+}
+.parcours-professionnel h4 {
+    margin-bottom: 10px;
+    color: #00ffe7;
+    font-weight: normal;
+}
+.parcours-professionnel ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+/* ======== COMPÉTENCES ======== */
+.competences h2 {
+    margin-bottom: 20px;
+}
+.competences ul {
+    list-style: none;
+    padding: 12px;
+    margin-bottom: 20px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+}
+.competences ul li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+.competences ul li span i {
+    color: #f5dc3d;
+    margin-left: 3px;
+}
+
+/* ======== ETUDES ET QUALIFICATIONS ======== */
+.etudes-qualifications {
+    margin-bottom: 80px;
+}
+.etudes-qualifications ul {
+    list-style: none;
+    padding: 12px;
+    margin-bottom: 80px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.2);
+    text-align: center;
+}
+.etudes-qualifications ul li {
+    margin-bottom: 20px;
+}
+
+/* ======== BARRES DE PROGRESSION ======== */
+.progress {
+    background: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    height: 10px;
+    margin-top: 6px;
+}
+.progress-bar {
+    height: 10px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #6a11cb, #2575fc, #04ebc4);
+    width: 0;
+    animation: fillBar 2s forwards;
+}
+
+/* ======== CLASSES POUR CHAQUE COMPÉTENCE ======== */
+.progress-html { width: 80%; }
+.progress-python { width: 60%; }
+.progress-packoffice { width: 90%; }
+/* Ajouter d’autres compétences avec des classes spécifiques */
+
+/* ======== FOOTER ======== */
+footer {
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    color: white;
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 40px;
+    font-size: 0.95em;
+    border-top: 2px solid rgba(255,255,255,0.2);
+    animation: fadeInUp 1.5s ease forwards;
+    opacity: 0;
+    animation-delay: 0.6s;
+}
+footer a {
+    color: #04ebc4;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+footer a:hover {
+    color: #fff;
+}
+
+/* ======== ANIMATIONS ======== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+@keyframes fillBar {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 900px) {
+    main {
+        flex-direction: column;
+        padding: 20px;
+    }
+    .articledroit, .articlegauche {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .competences ul li {
+        flex-direction: row; 
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 12px;  
+    }
+
+    header h1 {
+        font-size: 18px;  
+        padding: 10px 0;
+    }
+
+    main {
+        flex-direction: column; 
+        padding: 10px;
+    }
+
+    .articledroit, .articlegauche {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .competences ul li {
+        font-size: 12px;
+        padding: 3px 0;
+    }
+
+    .competences ul li span i {
+        font-size: 14px;  
+        margin-left: 2px;
+    }
+
+    .etudes-qualifications ul li {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    .parcours-professionnel article {
+        padding: 10px;
+        margin-bottom: 5px;
+    }
+
+    footer {
+        font-size: 10px;
+        padding: 10px 0;
+    }
+}
+
